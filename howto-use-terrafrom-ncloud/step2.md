@@ -8,11 +8,16 @@ Working directory (데모에서는 terraform) 생성 및 Terraform Provider(nclo
 `cd /root/terraform && touch ncloud.tf infra.tf user-data.sh`{{execute}}
 
 `vim user-data.sh`{{execute}}
+`i`{{execute}}
 
-`#!/bin/bash
+<pre class="file">
+{
+#!/bin/bash
 yum install -y httpd
 /etc/init.d/httpd start
-echo “NCP SERVER-$HOSTNAME” > /var/www/html/index.html`{{execute}}
+echo “NCP SERVER-$HOSTNAME” > /var/www/html/index.html
+},
+</pre>
 
 `:wq`{{execute}}
 
@@ -20,11 +25,17 @@ Provider 설정 파일(ncloud.tf)에 ncloud 선언 및 설치(init)을 진행합
 
 `vi ncloud.tf`{{execute}}
 
-`provider “ncloud” {
+`i`{{execute}}
+
+<pre class="file">
+{
+provider “ncloud” {
 access_key = “ACCESS KEY”
 secret_key = “SECET KEY”
 region = “Region”
-}`{{execute}}
+}
+},
+</pre>
 
 `:wq`{{execute}}
 
