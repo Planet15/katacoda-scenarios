@@ -21,7 +21,7 @@ Provider 설정 파일(ncloud.tf)에 ncloud 선언을 합니다.
 
 ncloud에서 부여 받은 ACCESS KEY 와 SECET KEY 확인 하는 방법은 아래의 사이트를 참고 합니다.
 
-[ncloud API ACCESS KEY 와 SECET KEY 확인](https://apidocs.ncloud.com/ko/common/ncpapi/#%EC%9D%B8%EC%A6%9D%ED%82%A4-%EC%83%9D%EC%84%B1%ED%95%98%EA%B8%B0)
+[Naver Cloud Platform에서 API 인증키를 생성하는 절차를 설명한 그림](https://blog.naver.com/casong99/221600092081)
 
 주의: 예제로 기입한 ACCESS KEY 와 SECET KEY 에 대해서 꼭 가지고 계신 KEY로 교체 되어야 합니다. 
 

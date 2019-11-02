@@ -7,6 +7,11 @@
 한국 리전 두 개의 Availability Zone (kr-1, kr-2)에 생성을 하기 위해서 
 서버 사양 과 설치되는 OS 이미지를 변수로 지정 합니다.
 
+SPSVRSTAND000004 : vCPU 2EA, Memory 4GB, Disk 50GB
+SPSW0LINUX000032 : centos-6.3-32
+
+[서버 사양 및 서버 이미지 코드](https://github.com/Planet15/ncloud_infra_example/wiki/ncloud-builder-parameter(packer)?fbclid=IwAR04koqtgj6KPFjkMnVpMAnwZs_8N_IwJ2nmDiH8t5fo5WJPjrIJf5HNKoU)
+
 <pre class="file" data-filename="infra.tf" data-target="replace">
 variable &#x22;ncloud_zones&#x22; {
 type = &#x22;list&#x22;
@@ -14,7 +19,7 @@ default = [&#x22;KR-1&#x22;, &#x22;KR-2&#x22;]
 }
 
 variable &#x22;server_image_prodict_code&#x22; {
-default = “SPSW0LINUX000032”
+default = &#x22;SPSW0LINUX000032&#x22;
 }
 
 variable &#x22;server_product_code&#x22; {
@@ -36,7 +41,7 @@ resource &#x22;ncloud_login_key&#x22; &#x22;loginkey&#x22; {
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 data &#x22;template_file&#x22; &#x22;user_data&#x22; {
-template = “${file(“user-data.sh”)}”
+template = &#x22;${file(&#x22;user-data.sh&#x22;)}&#x22;
 }
 </pre>
 
@@ -56,7 +61,7 @@ resource &#x22;ncloud_server&#x22; &#x22;server&#x22; {
 }
 </pre>
 
-Load Balancer(데모에서는 tf_webinar_lb) 생성 하며,  웹 서버 두 대 바인딩을 하게 설정 합니다.
+Load Balancer(데모에서는 tf_webinar_lb) 생성 하며, 웹 서버 두 대 바인딩을 하게 설정 합니다.
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 &#x22;load_balancer_name&#x22; = &#x22;ttf_webinar_lb&#x22;
@@ -75,8 +80,8 @@ resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 
 &#x22;server_instance_no_list&#x22; = [&#x22;${ncloud_server.server.*.id[0]}&#x22;,
 &#x22;${ncloud_server.server.*.id[1]}&#x22;]
-&#x22;internet_line_type_code” = &#x22;PUBLC&#x22;
-&#x22;network_usage_type_code” = &#x22;PBLIP&#x22;
+&#x22;internet_line_type_code&#x22; = &#x22;PUBLC&#x22;
+&#x22;network_usage_type_code&#x22; = &#x22;PBLIP&#x22;
 &#x22;region_no” = “1”
 }
 </pre>
