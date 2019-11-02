@@ -93,6 +93,8 @@ resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 
 리소스에 대한 생성 및 변경 내용 확인하며, 현재 이 과정은 실제로 생성 되는 과정은 아닙니다.
 
+`terraform init`{{execute}}
+
 `terraform plan`{{execute}}
 
 ncloud에 terraform 설정을 마지막으로 적용 합니다.
