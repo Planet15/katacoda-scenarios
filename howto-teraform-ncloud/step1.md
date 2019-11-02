@@ -1,6 +1,8 @@
 Terraform을 이용한 네이버 클라우드 플랫폼 인프라 생성하기 실습이며, 
 이번 실습에서 Terraform을 이용해서 생성할 아키텍처 입니다.
 
+![logo](https://miro.medium.com/max/966/0*xc0mbOMyyCdrejpl.png)
+
 ![demo_scanario](/katacoda-scenarios/howto-teraform-ncloud/img/topology.png)
 
 이번 실습을 통해 다음을 **달성** 할 수 있습니다.
