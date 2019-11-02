@@ -22,6 +22,9 @@ echo “NCP SERVER-$HOSTNAME” > /var/www/html/index.html
 
 Provider 설정 파일(ncloud.tf)에 ncloud 선언을 합니다.
 여기서 ncloud에서 부여 받은 ACCESS KEY 와 SECET KEY를 입력 합니다.
+
+ncloud에서 부여 받은 ACCESS KEY 와 SECET KEY 확인 하는 방법은 아래의 사이트를 참고 합니다.
+
 <pre class="file" data-filename="ncloud.tf" data-target="replace">
 provider “ncloud” {
 access_key = “ACCESS KEY”
@@ -32,4 +35,5 @@ region = “Region”
 
 terraform에 대한 Provider의 초기화를 진행 합니다.
 `cd terraform`{{execute}}
+
 `terraform init`{{execute}} 
