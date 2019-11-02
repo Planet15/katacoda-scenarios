@@ -3,6 +3,9 @@
 리소스 정의 파일을 생성 합니다.
 `/terraform/infra.tf`{{open}}
 
+Ncloud terraform API 사용법에 대한 문서는 아래의 내용을 참조 바랍니다.
+
+[Ncloud Provider 사용법](https://www.terraform.io/docs/providers/ncloud/index.html)
 
 한국 리전 두 개의 Availability Zone (kr-1, kr-2)에 생성을 하기 위해서 
 서버 사양 과 설치되는 OS 이미지를 변수로 지정 합니다.
@@ -49,15 +52,15 @@ template = &#x22;${file(&#x22;user-data.sh&#x22;)}&#x22;
 생성될 서버의 타입을 지정 하고, 서버 갯수를 2개로 설정 합니다.
 
 <pre class="file" data-filename="infra.tf" data-target="append">
-resource &#x22;ncloud_server&#x22; &#x22;server&#x22; {
+resource "ncloud_server" "server" {
 &#x22;count&#x22; = &#x22;2&#x22;
-&#x22;server_name&#x22; = &#x22;tf-webinar-vm-${count.index+1}&#x22;
+&#x22;name&#x22; = &#x22;tf-webinar-vm-${count.index+1}&#x22;
 &#x22;server_image_product_code&#x22; = &#x22;${var.server_image_prodict_code}&#x22;
 &#x22;server_product_code&#x22; = &#x22;${var.server_product_code}&#x22;
-&#x22;server_description&#x22; = &#x22;tf-webinar-vm-${count.index+1}&#x22;
+&#x22;description&#x22; = &#x22;tf-webinar-vm-${count.index+1}&#x22;
 &#x22;login_key_name&#x22; = &#x22;${ncloud_login_key.loginkey.key_name}&#x22;
 &#x22;access_control_group_configuration_no_list&#x22; = [&#x22;13054&#x22;]
-&#x22;zone_code&#x22; = &#x22;${var.ncloud_zones[count.index]}&#x22;
+&#x22;zone&#x22; = &#x22;${var.ncloud_zones[count.index]}&#x22;
 &#x22;user_data&#x22; = &#x22;${data.template_file.user_data.rendered}&#x22;
 }
 </pre>
@@ -66,25 +69,23 @@ Load Balancer(데모에서는 tf_webinar_lb) 생성 하며, 웹 서버 두 대 �
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
-&#x22;load_balancer_name&#x22; = &#x22;ttf_webinar_lb&#x22;
-&#x22;load_balancer_algorithm_type_code&#x22; = &#x22;RR&#x22;
-&#x22;load_balancer_description&#x22; = &#x22;tf_webinar_lb&#x22;
+&#x22;name&#x22; = &#x22;ttf_webinar_lb&#x22;
+&#x22;algorithm_type&#x22; = &#x22;RR&#x22;
+&#x22;description&#x22; = &#x22;tf_webinar_lb&#x22;
 
-&#x22;load_balancer_rule_list&#x22; = [
-
+&#x22;rule_list&#x22; = [
 {
-&#x22;protocol_type_code&#x22; = &#x22;HTTP&#x22;
+&#x22;protocol_type&#x22; = &#x22;HTTP&#x22;
 &#x22;load_balancer_port&#x22; = 80
 &#x22;server_port&#x22; = 80
-&#x22;l7_health_check_path&#x22; = &#x22;/&#x22;
+&#x22;l7_health_check_path&#x22; = "/"
 },
 ]
 
-&#x22;server_instance_no_list&#x22; = [&#x22;${ncloud_server.server.*.id[0]}&#x22;,
-&#x22;${ncloud_server.server.*.id[1]}&#x22;]
-&#x22;internet_line_type_code&#x22; = &#x22;PUBLC&#x22;
-&#x22;network_usage_type_code&#x22; = &#x22;PBLIP&#x22;
-&#x22;region_no” = “1”
+&#x22;server_instance_no_list&#x22; = [&#x22;${ncloud_server.server.*.id[0]}&#x22;,&#x22;${ncloud_server.server.*.id[1]}&#x22;]
+&#x22;internet_line_type&#x22; = &#x22;PUBLC&#x22;
+&#x22;network_usage_type&#x22; = &#x22;PBLIP&#x22;
+&#x22;region&#x22; = &#x22;1&#x22;
 }
 </pre>
 
