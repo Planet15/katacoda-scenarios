@@ -5,10 +5,11 @@
 그리고 Load Balancer의 퍼블릭 도메인에 접속해보면 두 대의 웹서버 페이지가 Round Robin으로 분기되는 것을 확인할 수 있습니다.
 
 - 서버 생성 확인
-![서버생성 확인](/katacoda-scenarios/howto-teraform-ncloud/img/check01.png)
+[서버생성 확인](https://miro.medium.com/max/629/0*SlLV84fujHe-qu3F)
 
 - 로드 밸런서 생성 확인 과  접속 테스트
-![로드밸런서 확인 그리고 접속](/katacoda-scenarios/howto-teraform-ncloud/img/check02.png)
+[로드밸런서 확인 그리고 접속](https://miro.medium.com/max/657/0*umbEgl-rPwJ6IsB5)
+[웹페이지 확인](https://miro.medium.com/max/575/0*A9zKkwBbgjQubLSt)
 
 실습이 완료 되었으며, 실습에 사용한 구성을 삭제 합니다.
 
