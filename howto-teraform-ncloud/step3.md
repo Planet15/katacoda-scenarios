@@ -31,9 +31,7 @@ default = &#x22;SPSVRSTAND000004&#x22;
 }
 </pre>
 
-키를 미리 생성 해야 하며, 여기에는 키의 이름을 기입 합니다.
-
-[CTRL+F를 통해 Step 4. 인증키 설정 참고 바랍니다.](https://docs.ncloud.com/ko/compute/compute-1-1-v2.html)
+key를 새로 생성하는 부분이며, key 이름은 webinar로 지정합니다.
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_login_key&#x22; &#x22;loginkey&#x22; {
@@ -97,3 +95,5 @@ ncloud에 terraform 설정을 마지막으로 적용 합니다.
 
 `terraform apply`{{execute}}
 
+최종 확인 후 yes 를 선택 합니다.
+`yes`{{execute}}
