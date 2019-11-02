@@ -1,5 +1,9 @@
 ## infra.tf 구성 하기  
 
+리소스 정의 파일을 생성 합니다.
+`/terraform/infra.tf`{{open}}
+
+
 한국 리전 두 개의 Availability Zone (kr-1, kr-2)에 생성을 하기 위해서 
 서버 사양 과 설치되는 OS 이미지를 변수로 지정 합니다.
 
@@ -19,7 +23,8 @@ default = “SPSVRSTAND000004”
 </pre>
 
 키를 미리 생성 해야 하며, 여기에는 키의 이름을 기입 합니다.
-[Step 4. 인증키 설정 참고 바랍니다.](https://docs.ncloud.com/ko/compute/compute-1-1-v2.html)
+
+[CTRL+F를 통해 Step 4. 인증키 설정 참고 바랍니다.](https://docs.ncloud.com/ko/compute/compute-1-1-v2.html)
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource “ncloud_login_key” “loginkey” {
