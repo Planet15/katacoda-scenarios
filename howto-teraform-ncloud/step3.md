@@ -8,9 +8,10 @@
 서버 사양 과 설치되는 OS 이미지를 변수로 지정 합니다.
 
 SPSVRSTAND000004 : vCPU 2EA, Memory 4GB, Disk 50GB
+
 SPSW0LINUX000032 : centos-6.3-32
 
-[서버 사양 및 서버 이미지 코드](https://github.com/Planet15/ncloud_infra_example/wiki/ncloud-builder-parameter(packer)?fbclid=IwAR04koqtgj6KPFjkMnVpMAnwZs_8N_IwJ2nmDiH8t5fo5WJPjrIJf5HNKoU)
+[서버 사양 및 서버 이미지 코드](http://bit.ly/2ZimVtS)
 
 <pre class="file" data-filename="infra.tf" data-target="replace">
 variable &#x22;ncloud_zones&#x22; {
@@ -62,6 +63,7 @@ resource &#x22;ncloud_server&#x22; &#x22;server&#x22; {
 </pre>
 
 Load Balancer(데모에서는 tf_webinar_lb) 생성 하며, 웹 서버 두 대 바인딩을 하게 설정 합니다.
+
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 &#x22;load_balancer_name&#x22; = &#x22;ttf_webinar_lb&#x22;
