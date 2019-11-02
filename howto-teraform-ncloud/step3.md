@@ -51,6 +51,8 @@ template = &#x22;${file(&#x22;user-data.sh&#x22;)}&#x22;
 
 주의 : access_control_group_configuration_no_list 의 값은 생성 하거나 혹은 있는 ACG ID 번호로 입력 해야 합니다.
 
+주의 : ACG 룰에 TCP 0.0.0.0/0 에 대한 80 포트에 대해서 허용이 되어야 합니다.
+ 
 [ACG 서비스 설명서](https://docs.ncloud.com/ko/compute/compute-2-3.html)
 
 <pre class="file" data-filename="infra.tf" data-target="append">
