@@ -31,7 +31,8 @@ default = &#x22;SPSVRSTAND000004&#x22;
 }
 </pre>
 
-key를 새로 생성하는 부분이며, key 이름은 webinar로 지정합니다.
+- key를 새로 생성하는 부분이며, key 이름은 **webinar** 로 지정합니다.
+- 만약 **webinar** key 가 미리 만들어진 경우, **다른 이름으로 지정** 합니다.
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_login_key&#x22; &#x22;loginkey&#x22; {
@@ -49,9 +50,8 @@ template = &#x22;${file(&#x22;user-data.sh&#x22;)}&#x22;
 
 생성될 서버의 타입을 지정 하고, 서버 갯수를 2개로 설정 합니다.
 
-주의 : access_control_group_configuration_no_list 의 값은 생성 하거나 혹은 있는 ACG ID 번호로 입력 해야 합니다.
-
-주의 : ACG 룰에 TCP 0.0.0.0/0 에 대한 80 포트에 대해서 허용이 되어야 합니다.
+- 주의: **access_control_group_configuration_no_list** 의 값은 생성 하거나 혹은 있는 **ACG ID** 번호로 입력 해야 합니다.
+- 주의: **ACG rule** 에 **TCP** **0.0.0.0/0** 에 대한 **80** 포트에 대해서 허용이 되어야 합니다.
  
 [ACG 서비스 설명서](https://docs.ncloud.com/ko/compute/compute-2-3.html)
 
@@ -69,7 +69,7 @@ resource "ncloud_server" "server" {
 }
 </pre>
 
-Load Balancer(데모에서는 tf_webinar_lb) 생성 하며, 웹 서버 두 대 바인딩을 하게 설정 합니다.
+Load Balancer(실습에서는 tf_webinar_lb) 생성 하며, 웹 서버 두 대 바인딩을 하게 설정 합니다.
 
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
