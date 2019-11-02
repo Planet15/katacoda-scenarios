@@ -10,13 +10,11 @@ Working directory (데모에서는 terraform) 생성 및 Terraform Provider(nclo
 `vim user-data.sh`{{execute}}
 `i`{{execute}}
 
-<pre class="file">
-{
+<pre class="file" data-filename="infra.tf" data-target="replace">
 #!/bin/bash
 yum install -y httpd
 /etc/init.d/httpd start
 echo “NCP SERVER-$HOSTNAME” > /var/www/html/index.html
-},
 </pre>
 
 `:wq`{{execute}}

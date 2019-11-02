@@ -37,6 +37,7 @@
     }
   },
   "environment": {
+    "hidefinish": true,
     "uilayout": "editor-terminal"
   },
   "backend": {
