@@ -34,6 +34,4 @@ region = “Region”
 </pre>
 
 terraform에 대한 Provider의 초기화를 진행 합니다.
-`cd terraform`{{execute}}
-
 `terraform init`{{execute}} 
