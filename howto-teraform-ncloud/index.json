@@ -29,6 +29,9 @@
     "intro": {
       "text": "intro.md"
     },
+    "files": [
+	"infra.tf", "ncloud.tf"
+    ],
     "finish": {
       "text": "finish.md"
     }
