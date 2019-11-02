@@ -7,9 +7,7 @@ Terraform을 이용한 네이버 클라우드 플랫폼 인프라 생성하기 �
 두 대의 웹 서버를 서로 다른 Availability Zone에 생성
  Public Load Balancer를 생성해서 두 대의 서버를 바인딩
 
-## Task
-
-Working directory 생성 및 Terraform Provider 정의
+## 관리 노드에 Terrafrom 설치 하기 
 
 각 리눅스 클라이언트 마다 환경 구성이 다르기 때문에 아래 명령에서 수행될 명령어 중 unzip을 설치 합니다.
 `yum install -y unzip`{{execute}}
@@ -20,7 +18,7 @@ Terraform 다운로드 페이지에서 실행 환경에 맞는 패키지 다운�
 
 `curl -o terraform_0.11.8_linux_amd64.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip`{{execute}}
 
-실습  환경에서 설치한 Terraform 버전은 0.11.8 입니다.
+실습환경에서 설치한 Terraform 버전은 0.11.8 입니다.
 
 다운 받은 terraform 압축 파일을을 해제 합니다. terraform 명령어를 /usr/bin 디렉토리로 이동합니다.
 

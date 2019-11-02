@@ -1,5 +1,5 @@
 
-## Task
+## infra.tf, user-data, infra.tf 파일 생성 후 구성하기
 
 Working directory (데모에서는 terraform) 생성 및 Terraform Provider(ncloud.tf) 및 리소스 정의 파일(infra.tf), user-data 파일 생성을 진행 합니다.
 

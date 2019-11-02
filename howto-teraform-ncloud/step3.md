@@ -1,5 +1,5 @@
 
-## Task
+## infra.tf 구성 하기  
 
 한국 리전 두 개의 Availability Zone (kr-1, kr-2)에 생성을 하기 위해서 
 서버 사양 과 설치되는 OS 이미지를 지정 합니다.
