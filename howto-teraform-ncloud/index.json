@@ -30,7 +30,7 @@
       "text": "intro.md"
     },
     "files": [
-	"infra.tf", "ncloud.tf"
+	"infra.tf", "ncloud.tf", "user-data.sh"
     ],
     "finish": {
       "text": "finish.md"
