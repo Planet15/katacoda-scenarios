@@ -8,7 +8,7 @@ Working directory 생성 및 Terraform Provider 정의
 
 Terraform은 단일 바이너리 파일로 배포되고 있어 간단하게 설치가 가능합니다.
 Terraform 다운로드 페이지에서 실행 환경에 맞는 패키지 다운로드를 한 후 압축을 해제하고 별도의 추가 설치 없이 바로 Terraform을 사용할 수 있습니다
-`wget https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip`{{execute}}
+`curl -o terraform_0.11.8_linux_amd64.zip https://releases.hashicorp.com/terraform/0.11.8/terraform_0.11.8_linux_amd64.zip`{{execute}}
 
 데모 환경에서 설치한 Terraform 버전은 0.11.8 입니다.
 
