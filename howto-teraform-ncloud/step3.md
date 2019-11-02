@@ -74,4 +74,4 @@ resource “ncloud_load_balancer” “lb” {
 </pre>
 
 리소스에 대한 생성 및 변경 내용 확인하며, 현재 이 과정은 실제로 생성 되는 과정은 아닙니다.
-`terraform plan`{{excute}}
+`terraform plan`{{execute}}
