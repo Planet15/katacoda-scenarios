@@ -10,4 +10,6 @@
 - 로드 밸런서 생성 확인 과  접속 테스트
 ![로드밸런서 확인 그리고 접속](/img/check02.png)
 
+실습이 완료 되었으며, 실습에 사용한 구성을 삭제 합니다.
+
 `terraform destory -auto-approve`{{execute}}
