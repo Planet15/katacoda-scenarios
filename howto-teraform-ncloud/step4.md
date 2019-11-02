@@ -7,3 +7,5 @@
 - 서버 생성 확인
 
 - 로드 밸런서 생성 확인 과  접속 테스트
+
+`terraform destory -auto-approve`{{execute}}
