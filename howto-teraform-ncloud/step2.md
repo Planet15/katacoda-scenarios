@@ -13,7 +13,7 @@ user-data에는 간단히 httpd를 설치 하여, 웹서비스가 구동 되는 
 #!/bin/bash
 yum install -y httpd
 /etc/init.d/httpd start
-echo “NCP SERVER-$HOSTNAME” > /var/www/html/index.html
+echo &#x22;NCP SERVER-$HOSTNAME&#x22; > /var/www/html/index.html
 </pre>
 
 Provider 설정 파일(ncloud.tf)에 ncloud 선언을 합니다.
@@ -26,10 +26,10 @@ ncloud에서 부여 받은 ACCESS KEY 와 SECET KEY 확인 하는 방법은 아�
 주의: 예제로 기입한 ACCESS KEY 와 SECET KEY 에 대해서 꼭 가지고 계신 KEY로 교체 되어야 합니다. 
 
 <pre class="file" data-filename="ncloud.tf" data-target="replace">
-provider “ncloud” {
-access_key = “ACCESS KEY”
-secret_key = “SECET KEY”
-region = “Region”
+provider &#x22;ncloud&#x22; {
+access_key = &#x22;ACCESS KEY&#x22;
+secret_key = &#x22;SECET KEY&#x22;
+region = &#x22;Region&#x22;
 }
 </pre>
 
