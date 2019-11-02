@@ -49,6 +49,10 @@ template = &#x22;${file(&#x22;user-data.sh&#x22;)}&#x22;
 
 생성될 서버의 타입을 지정 하고, 서버 갯수를 2개로 설정 합니다.
 
+주의 : access_control_group_configuration_no_list 의 값은 생성 하거나 혹은 있는 ACG ID 번호로 입력 해야 합니다.
+
+[ACG 서비스 설명서](https://docs.ncloud.com/ko/compute/compute-2-3.html)
+
 <pre class="file" data-filename="infra.tf" data-target="append">
 resource "ncloud_server" "server" {
 &#x22;count&#x22; = &#x22;2&#x22;
@@ -57,7 +61,7 @@ resource "ncloud_server" "server" {
 &#x22;server_product_code&#x22; = &#x22;${var.server_product_code}&#x22;
 &#x22;description&#x22; = &#x22;tf-webinar-vm-${count.index+1}&#x22;
 &#x22;login_key_name&#x22; = &#x22;${ncloud_login_key.loginkey.key_name}&#x22;
-&#x22;access_control_group_configuration_no_list&#x22; = [&#x22;13054&#x22;]
+&#x22;access_control_group_configuration_no_list&#x22; = [&#x22;ACG ID&#x22;]
 &#x22;zone&#x22; = &#x22;${var.ncloud_zones[count.index]}&#x22;
 &#x22;user_data&#x22; = &#x22;${data.template_file.user_data.rendered}&#x22;
 }
@@ -83,7 +87,7 @@ resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 &#x22;server_instance_no_list&#x22; = [&#x22;${ncloud_server.server.*.id[0]}&#x22;,&#x22;${ncloud_server.server.*.id[1]}&#x22;]
 &#x22;internet_line_type&#x22; = &#x22;PUBLC&#x22;
 &#x22;network_usage_type&#x22; = &#x22;PBLIP&#x22;
-&#x22;region&#x22; = &#x22;1&#x22;
+&#x22;region&#x22; = &#x22;KR&#x22;
 }
 </pre>
 
@@ -93,7 +97,6 @@ resource &#x22;ncloud_load_balancer&#x22; &#x22;lb&#x22; {
 
 ncloud에 terraform 설정을 마지막으로 적용 합니다.
 
-`terraform apply`{{execute}}
+`terraform apply -auto-approve`{{execute}}
 
-최종 확인 후 yes 를 선택 합니다.
-`yes`{{execute}}
+
